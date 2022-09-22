@@ -6,13 +6,13 @@ if __name__ == "__main__":
         quit(1)
     a = int(argv[1])
     b = int(argv[3])
-    operators = ["+", "-", "*", "/"]
+    ops = ["+", "-", "*", "/"]
     from calculator_1 import add, sub, mul, div
-    functions = [add, sub, mul, div]
-    for i, s in enumerate(operators):
+    funcs = [add, sub, mul, div]
+    for i, s in enumerate(ops):
         if argv[2] == s:
-            print("{} {} {} = {}".format(a, s, b, functions[i](a, b)))
+            print("{} {} {} = {}".format(a, s, b, funcs[i](a, b)))
             break
-        else:
-            print("Unknown operator. Available operators: +, -, * and /")
-            quit(1)
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        quit(1)
