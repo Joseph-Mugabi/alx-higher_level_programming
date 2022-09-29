@@ -2,7 +2,10 @@
 #include <object.h>
 #include <listobject.h>
 #include <bytesobject.h>
-
+/**
+ *  print_python_bytes - orints bytes of an objects
+ *  @p: object
+ */
 void print_python_bytes(PyObject *p)
 {
 	long int size;
@@ -26,7 +29,11 @@ void print_python_bytes(PyObject *p)
 		printf(" %02hhx", str_2_try[j]);
 	printf("\n");
 }
-
+/**
+ * print_python_list - prints the list of objects
+ * @p: object
+ *
+ */
 void print_python_list(PyObject *p)
 {
 	long int size = PyList_Size(p);
