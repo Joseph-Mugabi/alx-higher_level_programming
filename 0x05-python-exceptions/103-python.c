@@ -3,13 +3,13 @@
 
 /**
  * print_python_bytes - Prints bytes information
- * @p: python object
  *
- * Return: void
+ * @p: Python Object
+ * Return: no return
  */
 void print_python_bytes(PyObject *p)
 {
-	char *str;
+	char *string;
 	long int size, i, limit;
 
 	setbuf(stdout, NULL);
@@ -46,10 +46,10 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- *  print_python_float - Prints float information
+ * print_python_float - Prints float information
  *
- *  @p: Python Object
- *  Return: no return
+ * @p: Python Object
+ * Return: no return
  */
 void print_python_float(PyObject *p)
 {
@@ -74,10 +74,10 @@ void print_python_float(PyObject *p)
 }
 
 /**
- *  print_python_list - Prints list information
+ * print_python_list - Prints list information
  *
- *  @p: Python Object
- *  Return: no return
+ * @p: Python Object
+ * Return: no return
  */
 void print_python_list(PyObject *p)
 {
