@@ -2,8 +2,21 @@
 """Defines a class Square """
 
 
-class Square: 
+class Square:
+    """represents a square
+
+    attributes:
+        __size(int): size of a side of the square
+    """
     def __init__(self, size=0):
+        """init the square
+
+        Args:
+        size (int): size of a a side of square
+
+        return:
+        None
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         else:
