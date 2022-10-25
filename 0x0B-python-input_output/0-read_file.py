@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Read_file function
+read_file function
 """
 
 
