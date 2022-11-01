@@ -70,7 +70,7 @@ class Base():
                 load = cls.from_json_string(f.read())
             for idx, dic in enumerate(load):
                 load[idx] = (cls.create(**load[idx]))
-        except:
+        except IOError:
             pass
         return load
 
@@ -82,23 +82,26 @@ class Base():
             writer = csv.writer(f)
             for obj in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    writer.writerow([obj.id, obj.width, obj.height,
+                                    obj.x, obj.y])
                 if cls.__name__ == "Square":
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
     @classmethod
     def load_from_file_csv(cls):
         """ """
         obj = []
-        filename =cls.__name__ + ".csv"
+        filename = cls.__name__ + ".csv"
         with open(filename, 'r', newline='') as f:
             reader = csv.reader(f)
-            for r  in reader:
+            for r in reader:
                 if cls.__name__ == "Rectangle":
-                    dictionary = {"id": int(r[0]), "width": int(r[1]), "height": int(r[2]),
-                            "x": int(r[3]), "y": int(r[4])}
+                    dictionary = {"id": int(r[0]), "width": int(r[1]),
+                                  "height": int(r[2]), "x": int(r[3]),
+                                  "y": int(r[4])}
                 if cls.__name__ == "Square":
-                    dictionary = {"id": int(r[0]), "size": int(r[1]), "x":
-                            int(r[2]), "y": int(r[3])}
+                    dictionary = {"id": int(r[0]), "size": int(r[1]),
+                                  "x": int(r[2]), "y": int(r[3])}
                 objs = cls.create(**dictionary)
                 obj.append(objs)
         return obj
