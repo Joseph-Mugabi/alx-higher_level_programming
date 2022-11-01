@@ -16,10 +16,12 @@ class Square(Rectangle):
         """Initializes the square"""
         super().__init__(size, size, x, y, id)
         self.size = size
+
     @property
     def size(self):
         """getter size"""
         return self.width
+
     @size.setter
     def size(self, value):
         """setter size"""
@@ -28,8 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """[Square] (<id>) <x>/<y> - <size>"""
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
-                self.x, self.y, self.width)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format
+    (self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates class square by adding the public method
@@ -41,6 +43,7 @@ class Square(Rectangle):
         else:
             for keys in kwargs:
                 setattr(self, keys, kwargs[keys])
+
     def to_dictionary(self):
         """Update the class Square by adding the public method
         that returns the dictionary representation of a Square"""
