@@ -15,17 +15,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """
-    A representation of a class square
-    Inherited Attributes
-        id
-        __weight
-        __height
-        __x
-        __y
-    Class Attributes:
-        size
-    """
+    """A representation of a class square"""
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes the square"""
         super().__init__(size, size, x, y, id)
@@ -61,9 +51,9 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Update the class Square by adding the public method
         that returns the dictionary representation of a Square"""
-        d = {}
-        d["id"] = self.id
-        d["size"] = self.size
-        d["x"] = self.x
-        d["y"] = self.y
-        return d
+        return {
+                "id": self.id,
+                "size": self.width,
+                "x": self.x,
+                "y": self.y
+                }

@@ -118,10 +118,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Update the class Rectangle by adding the public method
         that returns the dictionary representation of a Rectangle"""
-        d = {}
-        d["id"] = self.id
-        d["width"] = self.width
-        d["height"] = self.height
-        d["x"] = self.x
-        d{"y"] = self.y
-        return d
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+            }
