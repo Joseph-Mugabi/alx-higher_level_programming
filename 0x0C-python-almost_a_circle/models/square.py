@@ -30,8 +30,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """[Square] (<id>) <x>/<y> - <size>"""
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format
-    (self.id, self.x, self.y, self.width)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
+                                                         self.y, self.width)
 
     def update(self, *args, **kwargs):
         """updates class square by adding the public method
