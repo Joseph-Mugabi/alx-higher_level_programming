@@ -65,17 +65,6 @@ class Test_Base_Class(unittest.TestCase):
         self.assertTrue(Base(), self.id == 1)
         self.assertTrue(Base(), self.id == 2)
 
-    def test_to_json_string(self):
-        """Test dict given translates into JSON string"""
-        d0 = {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}
-        d1 = {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
-        strd01 = Base.to_json_string([d0, d1])
-        self.assertTrue(type(d0) == dict)
-        self.assertTrue(type(strd2) == str)
-        self.assertTrue(strd01,
-                 [{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
-                     {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}])
-
     def test_from_none_json_string(self):
         """Test no JSON string translates into empty Python dict"""
         s2 = None
@@ -112,15 +101,6 @@ class Test_Base_Class(unittest.TestCase):
         self.assertTrue(type(strs3) == list)
         self.assertTrue(strs3 == [])
 
-    def test_create(self):
-        """Test transferring attribute dictionary to another instance"""
-        r = Rectangle(3, 5, 1, 2, 99)
-        rdic = r.to_dictionary()
-        r2 = Rectangle.create(**rdic)
-        self.assertEqual(str(r), '[Rectangle] (99) 1/2 - 3/5')
-        self.assertEqual(str(r2), '[Rectangle] (99) 1/2 - 3/5')
-        self.assertIsNot(r, r2)
-
     def test_save_to_file(self):
         """Test save to file"""
         r = Rectangle(10, 7, 2, 8, 99)
@@ -141,19 +121,6 @@ class Test_Base_Class(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual('[]', file.read())
-
-    def test_load_from_file(self):
-        """Test load from file"""
-        r = Rectangle(10, 7, 2, 8, 99)
-        r2 = Rectangle(2, 4, 2, 2, 98)
-        Rectangle.save_to_file([r, r2])
-        recs = Rectangle.load_from_file()
-        self.assertEqual(len(recs), 2)
-        for k, v in enumerate(recs):
-            if k == 0:
-                self.assertEqual(str(v), '[Rectangle] (99) 2/8 - 10/7')
-                if k == 1:
-                    self.assertEqual(str(v), '[Rectangle] (98) 2/2 - 2/4')
 
     def test_load_from_none_file(self):
         """Test load from None file"""
