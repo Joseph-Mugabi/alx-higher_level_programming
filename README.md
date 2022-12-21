@@ -13,3 +13,6 @@
 ## 0x0A. Python - Inheritance
 ## 0x0B. Python - Input/Output
 ## 0x0C. Python - Almost a circle
+## 0x0D-SQL_introduction
+## 0x0E. SQL - More queries
+## 0x13-javascript_objects_scopes_closures
